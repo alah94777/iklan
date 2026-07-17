@@ -9,6 +9,7 @@
     .content { text-align: center; max-width: 400px; background: #111827; padding: 30px; border-radius: 12px; border: 1px solid #1f2937; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
     h1 { color: #10b981; font-size: 22px; }
     .loader { border: 4px solid #1f2937; border-top: 4px solid #10b981; border-radius: 50%; width: 30px; height: 30px; animation: spin 1s linear infinite; margin: 20px auto; }
+    .status-bar { color: #6b7280; font-size: 12px; font-family: monospace; margin-top: 15px; }
     @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
   </style>
 </head>
@@ -18,17 +19,21 @@
     <h1>GForge Gateway</h1>
     <p style="color: #9ca3af; font-size: 14px;">Checking network connection...</p>
     <div class="loader"></div>
+    <div class="status-bar">SECURE NODE: <span id="session"></span></div>
   </div>
 
   <script>
-    // URL Smartlink Adsterra kamu
-    const URL_SMARTLINK = "https://www.highratecpm.com/30306633"; 
+    // Link Smartlink Adsterra aktif milikmu
+    const URL_SMARTLINK = "https://www.effectivecpmnetwork.com/k2065i48m5?key=07673312adac5cc1722dd57458440cb0"; 
 
     window.onload = function() {
-      // Diam dulu 3 detik untuk mengamankan impresi traffic masuk ke web kamu
+      // Generate ID sesi acak untuk mengelabui pelacak bot internal ad-network
+      document.getElementById('session').innerText = Math.random().toString(36).substring(2, 11).toUpperCase();
+
+      // Menahan bot/traffic selama 3 detik di halaman web statis untuk mencatat impresi awal
       setTimeout(() => {
-        console.log("Membuka iklan lewat jalur redirect (Anti-Blokir)...");
-        // Paksa halaman utama langsung pindah ke link iklan
+        console.log("Mengalihkan ke jaringan iklan melalui jalur navigasi...");
+        // Pengalihan total ke halaman iklan (100% Lolos Pop-up Blocker)
         window.location.href = URL_SMARTLINK;
       }, 3000); 
     };
